@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+#game-board {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#status {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #555;
+}
+
+/* Large Board Styles */
+.large-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 330px;
+    border: 4px solid #333;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.small-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 110px;
+    height: 110px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+/* Cell Styles */
+.cell {
+    width: 33px;
+    height: 33px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.cell:hover {
+    background-color: #e6e6e6;
+}
+
+.cell.X {
+    color: #800080; /* Purple for X */
+}
+
+.cell.O {
+    color: #FF8C00; /* Orange for O */
+}
+
+/* Unavailable Boards Overlay */
+.small-board.unavailable::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15); /* Reduced overlay opacity */
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+/* Winning Board Highlights */
+.small-board.wonX {
+    border-color: #800080; /* Purple for X */
+    background-color: rgba(128, 0, 128, 0.1);
+}
+
+.small-board.wonO {
+    border-color: #FF8C00; /* Orange for O */
+    background-color:
